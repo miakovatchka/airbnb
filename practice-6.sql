@@ -1,6 +1,8 @@
 -- How many reviews are written per neighborhood?
-select listings.neighborhood, reviews.id
-from reviews inner join listings on listings.id = reviews.id
+select listings.neighborhood, count(reviews.id)
+from listings
+inner join reviews
+on listings.id = reviews.listing_id
 group by neighborhood
 -- +------------------------+----------+
 -- | Albany Park            | 2557     |
