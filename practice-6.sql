@@ -1,5 +1,7 @@
 -- How many reviews are written per neighborhood?
-
+select listings.neighborhood, reviews.id
+from reviews inner join listings on listings.id = reviews.id
+group by neighborhood
 -- +------------------------+----------+
 -- | Albany Park            | 2557     |
 -- | Archer Heights         | 541      |
